@@ -1,0 +1,18 @@
+spring:
+  profiles:
+    active: native
+  application:
+    name: crud
+  datasource:
+    url: jdbc:postgresql://localhost:5432/crud
+    username: postgres
+    password: 12345678
+  jpa:
+    database: postgresql
+    open-in-view: false
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+      temp:
+        use_jdbc_metadata_defaults: true
+      dialect: org.hibernate.dialect.PostgreSQL82Dialect
