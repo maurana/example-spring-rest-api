@@ -3,6 +3,9 @@ package com.crud.service;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
+import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import com.crud.constant.Constant;
 import com.crud.model.Nationality;
 import com.crud.dto.NationalityDto;
@@ -11,22 +14,12 @@ import com.crud.exception.NotFoundException;
 import com.crud.exception.DataExistException;
 import com.crud.exception.BadRequestCustomException;
 import com.crud.repository.NationalityRepository;
-import org.springframework.stereotype.Service;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class NationalityService {
 
     @Autowired
     private NationalityRepository nationalityRepository;
-
-    private Nationality mappingNationality(NationalityDto nationalityDto) {
-        return Nationality.builder()
-            .n_name(nationalityDto.getN_name())
-            .n_desc(nationalityDto.getN_desc())
-            .build();
-    }
 
     public GeneralResponse<Object> list() {
         List<Nationality> nationalityList = nationalityRepository.findAll();
@@ -102,6 +95,13 @@ public class NationalityService {
         return GeneralResponse.builder()
             .responseCode(Constant.Response.SUCCESS_CODE)
             .responseMessage(Constant.Response.SUCCESS_MESSAGE)
+            .build();
+    }
+
+    private Nationality mappingNationality(NationalityDto nationalityDto) {
+        return Nationality.builder()
+            .n_name(nationalityDto.getN_name())
+            .n_desc(nationalityDto.getN_desc())
             .build();
     }
 

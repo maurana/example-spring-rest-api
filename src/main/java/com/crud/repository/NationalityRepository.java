@@ -1,9 +1,9 @@
 package com.crud.repository;
 
-import com.crud.model.Nationality;
 import org.springframework.stereotype.Repository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.jpa.repository.JpaRepository;
+import com.crud.model.Nationality;
 
 @Repository
 public interface NationalityRepository extends JpaRepository<Nationality, String>{

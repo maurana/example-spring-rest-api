@@ -1,5 +1,6 @@
 package com.crud.model;
 
+import java.util.List;
 import java.io.Serializable;
 import lombok.Data;
 import lombok.Getter;
@@ -13,7 +14,6 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.CascadeType;
-import jakarta.persistence.OneToMany;
 import org.hibernate.annotations.Proxy;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -40,6 +40,4 @@ public class Nationality implements Serializable {
     @Column(nullable = true, updatable = true)
     private String n_desc;
 
-    // @OneToMany(mappedBy = "nationality", cascade = CascadeType.ALL)
-    // private List<Person> persons;
 }

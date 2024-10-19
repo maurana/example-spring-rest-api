@@ -1,5 +1,6 @@
 package com.crud.dto;
 
+import java.util.List;
 import lombok.Data;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
@@ -20,5 +21,4 @@ public class NationalityDto {
     @NotBlank(message = "Desc is not blank !")
     @NotNull(message = "Desc is not null !")
     private String n_desc;
-    // private List<PersonDto> persons;
 }

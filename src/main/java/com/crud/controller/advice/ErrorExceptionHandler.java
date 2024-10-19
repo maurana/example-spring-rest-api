@@ -5,12 +5,6 @@ import java.util.List;
 import java.util.HashMap;
 import java.util.Collections;
 import java.util.stream.Collectors;
-import com.crud.response.GeneralResponse;
-import com.crud.exception.GenericErrorResponse;
-import com.crud.exception.NotFoundException;
-import com.crud.exception.DataExistException;
-// import com.crud.exception.UnauthorizedException;
-import com.crud.exception.BadRequestCustomException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +12,11 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.MethodArgumentNotValidException;
-// import org.springframework.security.access.AccessDeniedException;
+import com.crud.response.GeneralResponse;
+import com.crud.exception.GenericErrorResponse;
+import com.crud.exception.NotFoundException;
+import com.crud.exception.DataExistException;
+import com.crud.exception.BadRequestCustomException;
 
 @ControllerAdvice
 public class ErrorExceptionHandler {
@@ -76,22 +74,6 @@ public class ErrorExceptionHandler {
                 HttpStatus.BAD_REQUEST.getReasonPhrase(), errorList),
                 new HttpHeaders(), HttpStatus.BAD_REQUEST);
     }
-
-    // @ExceptionHandler(UnauthorizedException.class)
-    // public final ResponseEntity<GeneralResponse<Object>> unauthorizedException(UnauthorizedException ex) {
-    //     List<String> errorList = Collections.singletonList(ex.getMessage());
-    //     return new ResponseEntity<>(mappingError(HttpStatus.UNAUTHORIZED.value(),
-    //             HttpStatus.UNAUTHORIZED.getReasonPhrase(), errorList),
-    //             new HttpHeaders(), HttpStatus.UNAUTHORIZED);
-    // }
-
-    // @ExceptionHandler(AccessDeniedException.class)
-    // public final ResponseEntity<GeneralResponse<Object>> accessDeniedException(AccessDeniedException ex) {
-    //     List<String> errorList = Collections.singletonList(ex.getMessage());
-    //     return new ResponseEntity<>(mappingError(HttpStatus.FORBIDDEN.value(),
-    //             HttpStatus.FORBIDDEN.getReasonPhrase(), errorList),
-    //             new HttpHeaders(), HttpStatus.FORBIDDEN);
-    // }
 
     private GeneralResponse<Object> mappingError(int responseCode, String responseMessage, List<String> errorList) {
         return GeneralResponse.builder()

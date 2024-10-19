@@ -3,7 +3,13 @@ package com.crud.service;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Objects;
-// import java.time.LocalDateTime;
+import org.springframework.stereotype.Service;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.util.ObjectUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import com.crud.constant.Constant;
 import com.crud.model.Person;
 import com.crud.model.Nationality;
@@ -15,13 +21,6 @@ import com.crud.exception.DataExistException;
 import com.crud.exception.BadRequestCustomException;
 import com.crud.repository.PersonRepository;
 import com.crud.repository.NationalityRepository;
-import org.springframework.stereotype.Service;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.util.ObjectUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class PersonService {
@@ -30,29 +29,6 @@ public class PersonService {
     private PersonRepository personRepository;
     @Autowired
     private NationalityRepository nationalityRepository;
-
-    // LocalDateTime nowLocalDateTime = new LocalDateTime();
-
-    private String filterMapping(String value) {
-        if(Objects.isNull(value) || ObjectUtils.isEmpty(value.trim())) {
-            return "%%";
-        } else {
-            return "%".concat(value.toLowerCase()).concat("%");
-        }
-    }
-
-    private Person mappingPerson(PersonDto personDto, Nationality nationality) {
-        return Person.builder()
-            .p_n_id(nationality)
-            .p_name(personDto.getP_name())
-            .p_age(personDto.getP_age())
-            .p_birthday(personDto.getP_birthday())
-            .p_income(personDto.getP_income())
-            .p_gender(personDto.getP_gender())
-            .p_status(personDto.getP_status())
-            // .p_created(this.nowLocalDateTime)
-            .build();
-    }
 
     public GeneralResponse<Object> paging(RequestPage requestPage) {
         String p_name = filterMapping(requestPage.getP_name());
@@ -139,7 +115,6 @@ public class PersonService {
             .p_income(personDto.getP_income())
             .p_gender(personDto.getP_gender())
             .p_status(personDto.getP_status())
-            // .p_updated(this.nowLocalDateTime)
             .build();
 
         personRepository.save(updatedPerson);
@@ -161,6 +136,26 @@ public class PersonService {
         return GeneralResponse.builder()
             .responseCode(Constant.Response.SUCCESS_CODE)
             .responseMessage(Constant.Response.SUCCESS_MESSAGE)
+            .build();
+    }
+
+    private String filterMapping(String value) {
+        if(Objects.isNull(value) || ObjectUtils.isEmpty(value.trim())) {
+            return "%%";
+        } else {
+            return "%".concat(value.toLowerCase()).concat("%");
+        }
+    }
+
+    private Person mappingPerson(PersonDto personDto, Nationality nationality) {
+        return Person.builder()
+            .p_n_id(nationality)
+            .p_name(personDto.getP_name())
+            .p_age(personDto.getP_age())
+            .p_birthday(personDto.getP_birthday())
+            .p_income(personDto.getP_income())
+            .p_gender(personDto.getP_gender())
+            .p_status(personDto.getP_status())
             .build();
     }
 
