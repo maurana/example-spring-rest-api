@@ -13,4 +13,11 @@ public interface Constant {
         public static final String FORBIDDEN_REQUEST_MESSAGE = "Different {value} with exist data is forbidden";
     }
 
+    class Regex {
+        public static final String NUMERIC = "\\d+";
+        public static final String ALPHANUMERIC = "^[a-zA-Z0-9]+$";
+        public static final String ALPHABET = "^[a-zA-Z]+$";
+        public static final String ALPHANUMERIC_WITH_DOT_AND_SPACE = "^[a-zA-Z0-9.' ]+$";
+    }
+
 }

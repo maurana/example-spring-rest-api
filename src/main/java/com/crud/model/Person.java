@@ -56,6 +56,9 @@ public class Person implements Serializable {
     @Column(nullable = true, updatable = true)
     private Integer p_age;
 
+    @Column(unique = true, nullable = true, updatable = true)
+    private String p_email;
+
     @Column(nullable = true, updatable = true)
     private Date p_birthday;
 

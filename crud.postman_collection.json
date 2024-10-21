@@ -58,7 +58,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://127.0.0.1:8080/v1/crud/nationality/show?n_id=ff80818192a6ba1f0192a6be587b0001",
+							"raw": "http://127.0.0.1:8080/v1/crud/nationality/show?n_id=ff80818192aea9350192aeac5cb10004",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -76,7 +76,7 @@
 							"query": [
 								{
 									"key": "n_id",
-									"value": "ff80818192a6ba1f0192a6be587b0001"
+									"value": "ff80818192aea9350192aeac5cb10004"
 								}
 							]
 						}
@@ -90,7 +90,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"n_name\": \"Test\",\n    \"n_desc\": \"Test\"\n}",
+							"raw": "{\n    \"n_name\": \"Indonesia\",\n    \"n_desc\": \"ASEAN\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -124,7 +124,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"n_name\": \"Test\",\n    \"n_desc\": \"Belanda\"\n}",
+							"raw": "{\n    \"n_name\": \"Zimbabwe\",\n    \"n_desc\": \"AFRICA\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -132,7 +132,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8080/v1/crud/nationality/update/ff80818192a6ba1f0192a6bceccc0000",
+							"raw": "http://127.0.0.1:8080/v1/crud/nationality/update/ff80818192aea9350192aeaad3630001",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -146,7 +146,7 @@
 								"crud",
 								"nationality",
 								"update",
-								"ff80818192a6ba1f0192a6bceccc0000"
+								"ff80818192aea9350192aeaad3630001"
 							]
 						}
 					},
@@ -158,7 +158,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8080/v1/crud/nationality/delete?n_id=ff80818192a6ba1f0192a6bceccc0000",
+							"raw": "http://127.0.0.1:8080/v1/crud/nationality/delete?n_id=ff80818192aea9350192aeab7bbe0002",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -176,7 +176,7 @@
 							"query": [
 								{
 									"key": "n_id",
-									"value": "ff80818192a6ba1f0192a6bceccc0000"
+									"value": "ff80818192aea9350192aeab7bbe0002"
 								}
 							]
 						}
@@ -271,7 +271,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://127.0.0.1:8080/v1/crud/person/show?p_id=ff80818192a6dadb0192a6eb361c0003",
+							"raw": "http://127.0.0.1:8080/v1/crud/person/show?p_id=ff80818192aeb7de0192aeb9f0eb0001",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -289,7 +289,7 @@
 							"query": [
 								{
 									"key": "p_id",
-									"value": "ff80818192a6dadb0192a6eb361c0003"
+									"value": "ff80818192aeb7de0192aeb9f0eb0001"
 								}
 							]
 						}
@@ -303,7 +303,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"p_n_id\": \"ff80818192a6dadb0192a6e9e3b80002\",\n    \"p_name\": \"To Delete\",\n    \"p_age\": 0,\n    \"p_birthday\": \"2001-01-01\",\n    \"p_income\": 0.0,\n    \"p_gender\": \"MALE\",\n    \"p_status\": false\n}",
+							"raw": "{\n    \"p_n_id\": \"ff80818192aea9350192aeac5cb10004\",\n    \"p_name\": \"Maulana Hasanudin\",\n    \"p_age\": 30,\n    \"p_email\": \"maulana@crud.com\",\n    \"p_birthday\": \"2025-10-01\",\n    \"p_income\": 0.7,\n    \"p_gender\": \"MALE\",\n    \"p_status\": true\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -337,7 +337,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"p_n_id\": \"ff80818192a6ba1f0192a6be587b0001\",\n    \"p_name\": \"Maulani\",\n    \"p_age\": 99,\n    \"p_birthday\": \"2099-01-01\",\n    \"p_income\": 2.9,\n    \"p_gender\": \"FEMALE\",\n    \"p_status\": true\n}",
+							"raw": "{\n    \"p_n_id\": \"ff80818192aea9350192aeac5cb10004\",\n    \"p_name\": \"Maulana Hasanudin\",\n    \"p_age\": 30,\n    \"p_email\": \"maulana@crud.com\",\n    \"p_birthday\": \"2025-10-01\",\n    \"p_income\": 0.7,\n    \"p_gender\": \"MALE\",\n    \"p_status\": true\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -345,7 +345,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8080/v1/crud/person/update/ff80818192a6dadb0192a6e0fb5d0001",
+							"raw": "http://127.0.0.1:8080/v1/crud/person/update/ff80818192aeb7de0192aeb9f0eb0001",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -359,7 +359,7 @@
 								"crud",
 								"person",
 								"update",
-								"ff80818192a6dadb0192a6e0fb5d0001"
+								"ff80818192aeb7de0192aeb9f0eb0001"
 							]
 						}
 					},
@@ -377,7 +377,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://127.0.0.1:8080/v1/crud/person/delete?p_id=ff80818192a6f1330192a6f271c20000",
+							"raw": "http://127.0.0.1:8080/v1/crud/person/delete?p_id=ff80818192aeb7de0192aeb862400000",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -395,7 +395,7 @@
 							"query": [
 								{
 									"key": "p_id",
-									"value": "ff80818192a6f1330192a6f271c20000"
+									"value": "ff80818192aeb7de0192aeb862400000"
 								}
 							]
 						}
